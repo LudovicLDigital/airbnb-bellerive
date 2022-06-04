@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "title": "Salle de bain",
+    "description": "Jolie salle de bain",
+    "path": "Assets/FlatImages/bath.jpg"
+  },
+  {
+    "id": 1,
+    "title": "Entrée",
+    "description": "Couloir d'entrée",
+    "path": "Assets/FlatImages/enter.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Séjour",
+    "description": "Séjour avec TV connecté et clic clac",
+    "path": "Assets/FlatImages/living.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Chambre",
+    "description": "Chambre avec grand velux sous appentis",
+    "path": "Assets/FlatImages/room.jpg"
+  }
+]
