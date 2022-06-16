@@ -1,9 +1,13 @@
 import React from "react";
 import './plateform-backlinks.css';
 
-function PlateformBacklinks(props) {
+interface Props {
+    /** Addable class to the main container of the backlinks */
+    className: string
+}
+function PlateformBacklinks({ className }: Props): JSX.Element {
 
-    function clickOnAPlateform(id) {
+    function clickOnAPlateform(id: number) {
         if (id === 0) {
             window.open("https://www.airbnb.fr/s/Bellerive~sur~Allier/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&flexible_trip_lengths%5B%5D=one_week&query=Bellerive-sur-Allier&place_id=ChIJV_H4goLN9kcREMrry688CQQ&date_picker_type=calendar&source=structured_search_input_header&search_type=autocomplete_click")
         } else {
@@ -12,11 +16,11 @@ function PlateformBacklinks(props) {
     }
 
     return (
-        <div className={'flex flex-col items-center justify-center ' + props.className}>
+        <div className={'flex flex-col items-center justify-center ' + className}>
             <span className={'text-xl font-bold basis-1/3'}>Ou via une plateforme !</span>
             <img src={`${process.env.PUBLIC_URL}/Assets/Plateforms/airbnb.png`}
                  alt={'Réserver via Airbnb'}
-                 className={"backlinks m-5"}
+                 className={"backlinks m-5 rounded-3xl"}
                  onClick={() => clickOnAPlateform(0)}
             />
             <img src={`${process.env.PUBLIC_URL}/Assets/Plateforms/booking.png`}

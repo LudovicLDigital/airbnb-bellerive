@@ -1,10 +1,10 @@
-import React , {useState} from 'react';
+import React from 'react';
 import './footer.css'
 
 
 // =================================================================================
 
-function Footer(props) {
+function Footer(): JSX.Element {
 
     // ----
     return (

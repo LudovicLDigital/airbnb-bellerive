@@ -5,9 +5,9 @@ import { FaInstagram } from 'react-icons/fa';
 
 // =================================================================================
 
-function Header(props) {
+function Header(props: any): JSX.Element {
 
-    function onInstagramClick () {
+    function onInstagramClick (): void {
         window.open("https://www.instagram.com/_bloodey_/")
     }
     // ----

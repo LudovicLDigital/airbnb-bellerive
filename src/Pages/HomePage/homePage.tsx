@@ -4,7 +4,7 @@ import Carousel from "../../Component/Carousel/carousel";
 import LDCalendar from "../../Component/Calendar/calendar";
 import PlateformBacklinks from "../../Component/PlateformBackLinks/plateform-backlinks";
 
-function HomePage(props) {
+function HomePage(): JSX.Element {
 
     return (
         <div className={'flex flex-col'}>
@@ -16,10 +16,10 @@ function HomePage(props) {
                     Vous pourrez aussi vous détendre aux alentours, les communes de Bellerive-sur-Allier et Vichy ont aménagé pour vous les rives de l'allier pour profiter de séance
                     de détente ou sportive, vous trouverez même des petites plages !
                 </p>
-                <Carousel className={"basis-3/5 sm:order-first lg:order-last"}/>
+                <Carousel classNameContainer={"basis-3/5 sm:order-first lg:order-last"}/>
             </div>
             <div className={'flex sm:flex-col lg:flex-row justify-around'}>
-                <LDCalendar className={"basis-4/6 m-5"} />
+                <LDCalendar classNameContainer={"basis-4/6 m-5"} />
                 <PlateformBacklinks className={"basis-2/6 m-5"} />
             </div>
         </div>

@@ -5,32 +5,36 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import Modal from "../../Modal/modal";
 import {FaChevronLeft, FaChevronRight} from "react-icons/fa";
+import {LCDPicture} from "../../../ObjectTypes/LCDPicture";
 
 const INITIAL_STATE = {
-    photos: [{title: "Séjour", path: "Assets/logo.png"}],
+    photos: [{id: -1, title: "Séjour", path: "Assets/logo.png"}],
     selectedPhoto: null,
     showModal: false,
     currentSlide: 0
 }
-function PhotoSwiper({showAModal, ...props}) {
-    const [photos, setPhotos] = useState(INITIAL_STATE.photos);
-    const [showModal, setModalVisible] = useState(INITIAL_STATE.showModal);
-    const [selectedPhoto, setSelectedPhoto] = useState(INITIAL_STATE.selectedPhoto);
+interface Props {
+    showAModal: (datas: LCDPicture) => void
+}
+function PhotoSwiper({showAModal}: Props): JSX.Element | null {
+    const [photos, setPhotos] = useState<LCDPicture[]>(INITIAL_STATE.photos);
+    const [showModal, setModalVisible] = useState<boolean>(INITIAL_STATE.showModal);
+    const [selectedPhoto, setSelectedPhoto] = useState<LCDPicture | null>(INITIAL_STATE.selectedPhoto);
     const [currentSlide, setCurrentSlide] = useState(INITIAL_STATE.currentSlide);
 
     useEffect(() => {
         setPhotos(getImageArray());
     }, []);
 
-    function showFullScreen(item, index) {
+    function showFullScreen(item: React.ReactNode, index: number) {
         const datas = photos[index];
         showAModal(datas);
     }
-    function changeSlide(value) {
+    function changeSlide(value: number) {
         setCurrentSlide(currentSlide + value)
     }
 
-    function updateCurrentSlide(index) {
+    function updateCurrentSlide(index: number) {
 
         if (currentSlide !== index) {
             setCurrentSlide(index)
