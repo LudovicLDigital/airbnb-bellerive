@@ -3,7 +3,6 @@ import {getImageArray} from "../../../Helper/ImageArray";
 import './photoSwiper.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import Modal from "../../Modal/modal";
 import {FaChevronLeft, FaChevronRight} from "react-icons/fa";
 import {LCDPicture} from "../../../ObjectTypes/LCDPicture";
 
@@ -18,8 +17,6 @@ interface Props {
 }
 function PhotoSwiper({showAModal}: Props): JSX.Element | null {
     const [photos, setPhotos] = useState<LCDPicture[]>(INITIAL_STATE.photos);
-    const [showModal, setModalVisible] = useState<boolean>(INITIAL_STATE.showModal);
-    const [selectedPhoto, setSelectedPhoto] = useState<LCDPicture | null>(INITIAL_STATE.selectedPhoto);
     const [currentSlide, setCurrentSlide] = useState(INITIAL_STATE.currentSlide);
 
     useEffect(() => {

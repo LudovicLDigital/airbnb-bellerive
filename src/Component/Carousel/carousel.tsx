@@ -9,7 +9,7 @@ interface Props {
 }
 function Carousel({classNameContainer}: Props): JSX.Element {
     const [showModal, setModalVisible] = useState(false);
-    const [selectedPhoto, setSelectedPhoto] = useState<LCDPicture | null>(null);
+    const [selectedPhoto] = useState<LCDPicture | null>(null);
     function showPhoto(datas: LCDPicture) {
         //setSelectedPhoto(datas);
         //setModalVisible(true)
