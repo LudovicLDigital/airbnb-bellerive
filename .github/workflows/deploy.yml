@@ -1,0 +1,30 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: FTP Deploy
+        run: node deploy.js
+        env:
+          FTP_USER: ${{ secrets.USERNAME }}
+          FTP_PASSWORD: ${{ secrets.PASSWORD }}
+          FTP_HOST: ${{ secrets.SERVER }}
