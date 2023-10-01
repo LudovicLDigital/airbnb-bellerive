@@ -64,7 +64,7 @@ function LDCalendar({classNameContainer}: Props): JSX.Element {
             setStringRange(`Du ${dateToFRString(startDate)} au ${dateToFRString(endDate)}`);
 
             const countDay = (endDate.getTime() - startDate.getTime()) / (86400 * 1000);
-            const price = (countDay * 80).toFixed(0);
+            const price = (countDay * 50).toFixed(0);
             setPriceString(`Prix du séjour (${countDay.toFixed(0)} jours) = ${price} €`)
 
             checkForValidity(startDate, endDate);
