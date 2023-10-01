@@ -11,19 +11,18 @@ function Carousel({classNameContainer}: Props): JSX.Element {
     const [showModal, setModalVisible] = useState(false);
     const [selectedPhoto, setSelectedPhoto] = useState<LCDPicture | null>(null);
     function showPhoto(datas: LCDPicture) {
-        console.log(`<=====> ${new Date().getHours()}:${new Date().getMinutes()} ${new Date().getDate()}/${new Date().getMonth()} <=====>`);
-        console.log(`===> datas have the value :`);
-        console.log(datas)
-        setSelectedPhoto(datas);
-        setModalVisible(true)
+        //setSelectedPhoto(datas);
+        //setModalVisible(true)
     }
     return (
         <>
             {showModal && selectedPhoto &&
                 <Modal handleClose={() => setModalVisible(false)}>
-                    <div className={"flex flex-1"}>
+                    <div className={"flex flex-1 items-center justify-items-center"}>
                         <img src={`${process.env.PUBLIC_URL}/${selectedPhoto.path}`}
-                             alt={selectedPhoto.title}/>
+                             alt={selectedPhoto.title}
+                            id={"image-zoom"}
+                        />
                     </div>
                 </Modal>
             }

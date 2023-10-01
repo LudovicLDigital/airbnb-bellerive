@@ -12,10 +12,10 @@ function Modal({ handleClose, children} : Props): JSX.Element {
     return (
         <div className={"modal display-block"}>
             <div className="modal-main">
-                {children}
-                <button type="button" onClick={handleClose}>
-                    Close
+                <button className={"close-button"} type="button" onClick={handleClose}>
+                    Retour
                 </button>
+                {children}
             </div>
         </div>
     )
